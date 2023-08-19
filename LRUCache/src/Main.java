@@ -5,8 +5,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
-        LRUCache<Employee> cache = new LRUCache<>(4);
+        LRUCache<Employee> cache = new LRUCache<>(6);
         loadFromFile("src/data.txt").forEach(cache::addElement);
         cache.getAllElements().forEach(System.out::println);
     }

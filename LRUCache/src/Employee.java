@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Employee{
+public class Employee {
     private final String name;
     private String post;
     private int salary;
@@ -25,5 +25,15 @@ public class Employee{
 
     public String toString() {
         return name + "\t" + post + "\t" + salary;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj.getClass() == getClass())
+            if (Objects.equals(name, ((Employee) obj).getName()))
+                if (Objects.equals(post, ((Employee) obj).getPost()))
+                    if (salary == ((Employee) obj).getSalary())
+                        return true;
+        return false;
     }
 }
